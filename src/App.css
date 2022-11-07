@@ -25,8 +25,7 @@ body {
   margin: auto;
   align-items: center;
   justify-content: space-between;
-  padding: 50px;
-  padding-top: 25p;
+  padding: 50px !important;
   background: rgba(121, 103, 103, 0.3);
   backdrop-filter: blur( 7.5px );
   -webkit-backdrop-filter: blur( 7.5px );
