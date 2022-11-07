@@ -1,0 +1,285 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+}
+
+*:active {
+  outline: none;
+}
+
+body {
+  background-image: linear-gradient(to right top, #09191f, #0a1c23, #0c232c, #012e43, #00314c, #2d3164, #4a2c67, #672263);
+}
+
+.upper-layer {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  padding-top: 25p;
+  background: rgba(121, 103, 103, 0.3);
+  backdrop-filter: blur( 7.5px );
+  -webkit-backdrop-filter: blur( 7.5px );
+  box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  z-index: 4;
+}
+
+.row {
+  position: relative;
+}
+
+.col {
+  display: table;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.content-container {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.side-img {
+  background-image: url('./assets/cat.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.header-container {
+  height: auto;
+}
+
+.form-container {
+  height: auto;
+  margin: 20px 0px;
+}
+
+.title {
+  font-size: 30px;
+  letter-spacing: 1px;
+  color: white;
+  padding: 5px;
+}
+
+.subtitle {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: rgb(240, 240, 240);
+  padding: 0px 5px;
+}
+
+.input-group {
+  margin: 10px 0px;
+}
+
+.input-title {
+  color: white;
+  font-size: 14px;
+  margin: 5px;
+  width: 95%;
+}
+
+.input-item {
+  border-radius: 4px;
+  font-size: 14px;
+  border: 0.25px solid rgb(197, 197, 197);
+  width: 95%;
+  padding: 5px 10px;
+  background-color: transparent;
+  color: rgb(230, 230, 230);
+  font-weight: lighter;
+  margin: 0px 5px;
+}
+
+.input-item:active {
+  font-weight: lighter;
+}
+
+.remember-container {
+  width: 95%;
+  margin: 15px 5px;
+}
+
+.remember {
+  font-size: 12px;
+  color: white;
+}
+
+.checkbox-round {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.forgot {
+  letter-spacing: 0.5px;
+  color: #cfb5ff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.forgot:hover {
+  letter-spacing: 0.5px;
+  color: #D36BCD;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #00314c;
+  border: none;
+  color: #FFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  width: 95%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button:active {
+  border: 0px;
+}
+
+.google {
+  background-color: #FFF;
+  color: #00314c;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.google-button i {
+  padding: 0px 5px;
+}
+
+.footer-container {
+  margin: 20px 10px;
+  height: auto;
+}
+
+.footer-text {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: rgb(240, 240, 240);
+  padding: 0px 5px;
+}
+
+.footer-text span {
+  letter-spacing: 0.5px;
+  color: #cfb5ff;
+  padding: 0px 5px;
+}
+
+.footer-text span:hover {
+  cursor: pointer;
+  color: #D36BCD;
+}
+
+.credits {
+  position: absolute;
+  color: rgb(216, 216, 216);
+  height: auto;  
+  bottom: 10px;
+  margin: 0 auto;
+  font-size: 10px;
+}
+
+.credits a {
+  cursor: pointer;
+  color: #cfb5ff;
+}
+
+.credits a:hover {
+  cursor: pointer;
+  color: #D36BCD;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .upper-layer {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .upper-layer {
+    padding: 20px;
+  }
+  .title {
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: white;
+    padding: 5px;
+  }
+  .button {
+    font-size: 14px;
+  }
+  .google {
+    font-size: 12px;
+  }
+  .footer-text {
+    font-size: 10px;
+  }
+  .remember {
+    font-size: 10px;
+  }
+  .checkbox-round {
+    width: 12px;
+    height: 12px;
+  }
+  .forgot {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .img-container {
+    display: none;
+  }
+}
