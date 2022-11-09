@@ -7,6 +7,8 @@ function App() {
   const [password, setPassword] = React.useState('');
   const [remember, setRemember] = React.useState(false);
   const [showPassword, setShowPassword] = React.useState(false);
+  const [warning, setWarning] = React.useState('none');
+
   let newDate = new Date()
   let year = newDate.getFullYear();
 
@@ -23,6 +25,14 @@ function App() {
   const handlePassword = (event) => {
     setShowPassword(!showPassword);
   } 
+
+  function warningfunction(event) {
+    if (event.getModifierState("CapsLock")) {
+      setWarning('block');
+    } else {
+      setWarning('none');
+    }
+  };
 
   return (
     <div className='container d-flex align-items-center content'>
@@ -47,22 +57,26 @@ function App() {
                 </div>
                 <div className='input-group'>
                   <label className='input-title'>Password</label>
-                  <div className="password-container">
+                  <div className='password-container'>
                     <input
                       name='password'
                       type={showPassword ? 'text' : 'password'}
                       placeholder='Enter your password'
                       value={password}
                       onChange={e => setPassword(e.target.value)}
-                      required className='input-item'/>
-                      <i className={showPassword ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'} onClick={handlePassword} style={{ "--fa-animation-duration": "3s", "--fa-animation-iteration-count": "5", "--fa-animation-timing": "ease-in-out" }}></i>
+                      onKeyUp={warningfunction}
+                      required className='input-item' id='password'/>
+                      <i className={showPassword ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'} onClick={handlePassword} style={{ '--fa-animation-duration': '3s', '--fa-animation-iteration-count': '5', '--fa-animation-timing': 'ease-in-out' }}></i>
+                  </div>
+                  <div id='spnWarning' className='warning vertical-align-center' style={{'display': warning}}>
+                    Caps lock is ON.
                   </div>
                 </div>
-                <div className="d-flex justify-content-between remember-container">
-                  <div className="remember vertical-align-center">
-                    <label><input type="checkbox" className='checkbox-round' onChange={e => setRemember(e.target.value)}/> Remember for 30 days</label>
+                <div className='d-flex justify-content-between remember-container'>
+                  <div className='remember vertical-align-center'>
+                    <label><input type='checkbox' className='checkbox-round' onChange={e => setRemember(e.target.value)}/> Remember for 30 days</label>
                   </div>
-                  <div className="forgot">Forgot password</div>
+                  <div className='forgot'>Forgot password</div>
                 </div>
                 <button className='button' onClick={handleSubmit}><span>Sign in </span></button>
                 <button className='button google'>
@@ -80,7 +94,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="credits">
+      <div className='credits'>
         © {year} <a href='https://divanny.github.io/'>Divanny Pérez</a>. All rights reserved.
       </div>
     </div>
