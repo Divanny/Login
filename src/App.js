@@ -6,6 +6,7 @@ function App() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [remember, setRemember] = React.useState(false);
+  const [showPassword, setShowPassword] = React.useState(false);
   let newDate = new Date()
   let year = newDate.getFullYear();
 
@@ -18,6 +19,10 @@ function App() {
     
     event.preventDefault();
   }
+
+  const handlePassword = (event) => {
+    setShowPassword(!showPassword);
+  } 
 
   return (
     <div className='container d-flex align-items-center content'>
@@ -42,13 +47,16 @@ function App() {
                 </div>
                 <div className='input-group'>
                   <label className='input-title'>Password</label>
-                  <input
-                    name='password'
-                    type='password'
-                    placeholder='Enter your password'
-                    value={password}
-                    onChange={e => setPassword(e.target.value)}
-                    required className='input-item'/>
+                  <div className="password-container">
+                    <input
+                      name='password'
+                      type={showPassword ? 'text' : 'password'}
+                      placeholder='Enter your password'
+                      value={password}
+                      onChange={e => setPassword(e.target.value)}
+                      required className='input-item'/>
+                      <i className={showPassword ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'} onClick={handlePassword} style={{ "--fa-animation-duration": "3s", "--fa-animation-iteration-count": "5", "--fa-animation-timing": "ease-in-out" }}></i>
+                  </div>
                 </div>
                 <div className="d-flex justify-content-between remember-container">
                   <div className="remember vertical-align-center">

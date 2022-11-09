@@ -2,6 +2,18 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-10px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -21,11 +33,11 @@ body {
 .upper-layer {
   position: relative;
   width: 100%;
-  height: 90%;
+  height: auto;
   margin: auto;
   align-items: center;
   justify-content: space-between;
-  padding: 50px !important;
+  padding: 50px;
   background: rgba(121, 103, 103, 0.3);
   backdrop-filter: blur( 7.5px );
   -webkit-backdrop-filter: blur( 7.5px );
@@ -52,11 +64,17 @@ body {
   vertical-align: middle;
 }
 
+.img-container {
+  height: auto;
+}
+
 .side-img {
-  background-image: url('./assets/cat.png');
+  background-image: url('./assets/Outer\ space-amico.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
 }
 
 .header-container {
@@ -95,10 +113,10 @@ body {
 
 .input-item {
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 12px;
   border: 0.25px solid rgb(197, 197, 197);
   width: 95%;
-  padding: 5px 10px;
+  padding: 12px;
   background-color: transparent;
   color: rgb(230, 230, 230);
   font-weight: lighter;
@@ -120,13 +138,15 @@ body {
 }
 
 .checkbox-round {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   background-color: white;
   border-radius: 50%;
   vertical-align: middle;
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
   cursor: pointer;
+  accent-color: #5729e9;
+  
 }
 
 .forgot {
@@ -139,7 +159,6 @@ body {
 .forgot:hover {
   letter-spacing: 0.5px;
   color: #D36BCD;
-  font-size: 12px;
   cursor: pointer;
 }
 
@@ -238,6 +257,36 @@ body {
   cursor: pointer;
   color: #D36BCD;
   text-decoration: none;
+}
+
+.password-container{
+  width: 95%;
+  position: relative;
+}
+
+.password-container input[type="password"],
+.password-container input[type="text"]{
+  width: 100%;
+  padding: 12px 36px 12px 12px;
+  box-sizing: border-box;
+}
+
+.fa-eye {
+  position: absolute;
+  height: auto;
+  top: 35%;
+  right: 4%;
+  cursor: pointer;
+  color: lightgray;
+}
+
+.fa-eye-slash {
+  position: absolute;
+  height: auto;
+  top: 35%;
+  right: 4%;
+  cursor: pointer;
+  color: lightgray;
 }
 
 @media (max-width: 1024px) {
